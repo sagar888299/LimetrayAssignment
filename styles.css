@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  line-height: 1.6;;
+  line-height: 1.6;
 }
 
 .navbar {
@@ -11,7 +11,7 @@ body {
 }
 
 .logo img {
-  height: 50px;
+  height: 40px;
   font-size: 24px;
   font-weight: bold;
   color: #333;
@@ -24,6 +24,7 @@ body {
   gap: 30px;
   font-weight: bold;
 }
+
 .navbar-links a {
   color: #333;
   float: left;
@@ -34,6 +35,95 @@ body {
 
 .navbar-links a:hover {
   color: #00b657;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 20;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .about-item {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .about-item img {
+    width: 100%; /* Make image responsive */
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .about-item p {
+    font-size: 0.8rem; /* Smaller text */
+    padding: 10px;
+    max-width: 90%; /* Let it wrap naturally */
+    color: #555;
+  }
+
+  #item2 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .about-content {
+    max-width: 100%;
+    padding: 20px;
+    color: #555;
+  }
+
+  .about-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .about-item img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .about-item p {
+    font-size: 1rem;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  #item2 {
+    flex-direction: column-reverse;
+  }
 }
 
 .slider {
